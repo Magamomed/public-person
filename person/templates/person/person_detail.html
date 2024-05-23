@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ person.name }}{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <img src="{{ person.photo.url }}" class="rounded-circle" alt="{{ person.name }}" style="width: 150px; height: 150px;">
+    <h2>{{ person.name }}</h2>
+    <a href="{% url 'person_biography' person.pk %}" class="btn btn-primary">Биография</a>
+    <a href="{% url 'person_works' person.pk %}" class="btn btn-primary">Произведения</a>
+</div>
+{% endblock %}

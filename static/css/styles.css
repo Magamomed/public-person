@@ -1,0 +1,62 @@
+body {
+    background-image: url('https://example.com/your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+    border-bottom: none;
+    margin-bottom: 1rem;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 2px solid #333;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: #00aaff;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0088cc;
+}
+
+.card-footer {
+    margin-top: 1rem;
+}
+
+.card-footer a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.card-footer a:hover {
+    text-decoration: underline;
+}

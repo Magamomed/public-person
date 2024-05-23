@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}List Persons{% endblock %}
+
+{% block content %}
+<h2>Public Persons</h2>
+<input class="form-control" id="search" type="text" placeholder="Search...">
+<br>
+<ul class="list-group" id="person-list">
+    {% for person in persons %}
+    <li class="list-group-item">
+        <h5><a href="{% url 'person_detail' person.pk %}">{{ person.name }}</a></h5>
+        <p>{{ person.biography|truncatewords:20 }}</p>
+        {% if person.qr_code %}
+        <img src="{{ person.qr_code.url }}" alt="QR Code">
+        {% else %}
+        <p>No QR Code</p>
+        {% endif %}
+        <a href="{% url 'delete_person' person.pk %}" class="btn btn-danger">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+<script>
+    document.getElementById('search').addEventListener('input', function() {
+        let searchValue = this.value.toLowerCase();
+        let persons = document.querySelectorAll('#person-list .list-group-item');
+        persons.forEach(person => {
+            let name = person.querySelector('h5 a').textContent.toLowerCase();
+            if (name.includes(searchValue)) {
+                person.style.display = '';
+            } else {
+                person.style.display = 'none';
+            }
+        });
+    });
+</script>
+{% endblock %}

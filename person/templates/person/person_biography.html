@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Биография - {{ person.name }}{% endblock %}
+
+{% block content %}
+<a href="{% url 'person_detail' person.pk %}" class="btn btn-primary">Назад</a>
+<h2>Биография</h2>
+<p>{{ person.biography }}</p>
+{% endblock %}

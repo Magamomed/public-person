@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Произведения - {{ person.name }}{% endblock %}
+
+{% block content %}
+<a href="{% url 'person_detail' person.pk %}" class="btn btn-primary">Назад</a>
+<h2>Произведения</h2>
+<p>{{ person.works }}</p>
+{% endblock %}

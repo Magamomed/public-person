@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Public Person{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2>Add Public Person</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="id_name">Name:</label>
+                            {{ form.name }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_biography">Biography:</label>
+                            {{ form.biography }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_works">Works:</label>
+                            {{ form.works }}
+                        </div>
+                        <div class="form-group">
+                            <label for="id_photo">Photo:</label>
+                            {{ form.photo }}
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
