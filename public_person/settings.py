@@ -14,7 +14,7 @@ SECRET_KEY = 'your-secret-key'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'sultan051309.pythonanywhere.com/'
+    'sultan051309.pythonanywhere.com'
 ]
 
 # Application definition
