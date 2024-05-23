@@ -23,7 +23,7 @@ class PublicPerson(models.Model):
         )
         
         # Используем правильный URL
-        qr.add_data(f'http://127.0.0.1:8000/person/{self.id}/')
+        qr.add_data(f'https://sultan051309.pythonanywhere.com/person/{self.id}/')
         qr.make(fit=True)
         img = qr.make_image(fill='black', back_color='white')
         
