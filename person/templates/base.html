@@ -11,27 +11,37 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">PublicPerson</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'add_person' %}">Add Person</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'list_persons' %}">List Persons</a>
-                </li>
+            <ul class="navbar-nav mr-auto">
                 {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'add_person' %}">Добавить персону</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'list_persons' %}">Список персон</a>
+                </li>
+                {% endif %}
+            </ul>
+            <ul class="navbar-nav">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <span class="navbar-text mr-3">Вошел как: {{ user.username }}</span>
+                </li>
                 <li class="nav-item">
                     <form method="post" action="{% url 'logout' %}">
                         {% csrf_token %}
-                        <button type="submit" class="btn btn-link nav-link">Log Out</button>
+                        <button type="submit" class="btn btn-link nav-link">Выйти с аккаунта</button>
                     </form>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+                    <a class="nav-link" href="{% url 'signup' %}">Регистрация</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                    <a class="nav-link" href="{% url 'login' %}">Войти</a>
                 </li>
                 {% endif %}
             </ul>

@@ -14,7 +14,10 @@ SECRET_KEY = 'your-secret-key'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'sultan051309.pythonanywhere.com'
+    'sultan051309.pythonanywhere.com',
+    # '127.0.0.1',
+    # 'localhost',
+    # '127.0.0.1:8000',
 ]
 
 # Application definition
@@ -130,9 +133,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+
 # Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
 LOGOUT_REDIRECT_URL = '/accounts/login/'  # Или другой URL, куда вы хотите перенаправить пользователя
+
+AUTH_USER_MODEL = 'person.CustomUser'
+

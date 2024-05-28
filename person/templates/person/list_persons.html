@@ -16,7 +16,7 @@
         {% else %}
         <p>No QR Code</p>
         {% endif %}
-        <a href="{% url 'delete_person' person.pk %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'delete_person' person.pk %}" class="btn btn-danger">Удалить</a>
     </li>
     {% endfor %}
 </ul>
